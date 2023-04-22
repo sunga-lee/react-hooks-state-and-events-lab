@@ -2,6 +2,14 @@ import React from "react";
 import Item from "./Item";
 
 function ShoppingList({ items }) {
+  const[selectedCategory, setSelectedCategory] = ("All");
+
+  function handleCategoryChange (event) {
+    setSelectedCategory(event.target.value);
+  }
+
+  const itemsToDisplay = items.filter((item) => selectedCategory === "All" || item.category === selectedCategory)
+
   return (
     <div className="ShoppingList">
       <div className="Filter">

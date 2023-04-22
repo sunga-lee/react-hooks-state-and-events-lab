@@ -1,6 +1,16 @@
 import React from "react";
 
 function Item({ name, category }) {
+
+  const [isInCart, setIsInCart] = (false)
+
+  function handleAddToCartClick() {
+    setIsInCart((isInCart) => !isInCart);
+  }
+
+  const itemClass =isInCart ? "in-cart" : "" 
+  const buttonClass = isInCart ? "remove" : "add"
+
   return (
     <li className="">
       <span>{name}</span>
